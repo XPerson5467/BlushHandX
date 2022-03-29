@@ -14,4 +14,4 @@ For now this is an open source project so go wild!
 
 Click this link, go down to assets, download the zip, extract it, then run the exe. Don't lose the pck file or the game breaks
 Github makes it too hard to find releases.
-https://github.com/XPerson5467/BlushHandX/releases/tag/v1.3-alpha
+https://github.com/XPerson5467/BlushHandX/releases
