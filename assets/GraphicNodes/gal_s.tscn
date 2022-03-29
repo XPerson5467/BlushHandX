@@ -1,0 +1,155 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://assets/images/Girls/girl_galina-d0-000.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/Girls/girl_galina-d1-000.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/Girls/girl_galina-l2-000.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/Girls/girl_galina-l4-000.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/Girls/girl_galina-d4-000.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Girls/girl_galina-d2-000.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Girls/girl_galina-d3-000.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Girls/girl_galina-d5-000.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Girls/girl_galina-l5-000.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/Girls/girl_galina-l3-000.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/Girls/girl_galina-l1-000.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/Girls/girl_galina-s5-000.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/Girls/girl_galina-w3-000.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/Girls/girl_galina-s3-000.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/Girls/girl_galina-s4-000.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/Girls/girl_galina-w0-000.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/Girls/girl_galina-w1-000.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/Girls/girl_galina-w4-000.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/Girls/girl_galina-w2-000.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/Girls/girl_galina-w5-000.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/Girls/girl_galina-s0-000.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/Girls/girl_galina-s1-000.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/Girls/girl_galina-s0-001.png" type="Texture" id=23]
+[ext_resource path="res://assets/images/Girls/girl_galina-s2-000.png" type="Texture" id=24]
+[ext_resource path="res://assets/images/Girls/girl_galina-l0-000.png" type="Texture" id=25]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "W5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "L1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "S1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "L4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "W1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "D3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "W4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "L2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "S5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "D5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "D0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "D2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "W0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "W3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "L5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "L3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "S0",
+"speed": 0.5
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "D1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 24 ) ],
+"loop": true,
+"name": "S2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "W2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "S4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "S3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ) ],
+"loop": true,
+"name": "L0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "D4",
+"speed": 5.0
+} ]
+
+[node name="gal_s" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "D5"
+playing = true

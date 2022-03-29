@@ -1,0 +1,43 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://assets/images/player/playerstate-m3-000.png" type="Texture" id=1]
+[ext_resource path="res://assets/images/player/playerstate-m0-000.png" type="Texture" id=2]
+[ext_resource path="res://assets/images/player/playerstate-f0-000.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/player/playerstate-f3-000.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/player/playerstate-m0t-000.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/player/playerstate-m4-000.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/player/playerstate-m1t-000.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/player/playerstate-m1-000.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/player/playerstate-m2-000.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/player/playerstate-f2-000.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/player/playerstate-f0t-000.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/player/playerstate-f4-000.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/player/playerstate-f1t-000.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/player/playerstate-f1-000.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 14 ), ExtResource( 10 ), ExtResource( 4 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "female",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "female_t",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "male_t",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 1 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "male",
+"speed": 5.0
+} ]
+
+[node name="player_s" type="AnimatedSprite"]
+frames = SubResource( 1 )
+animation = "male"

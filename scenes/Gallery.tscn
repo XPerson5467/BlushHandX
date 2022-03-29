@@ -1,0 +1,289 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/GraphicNodes/macy_s.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/GraphicNodes/chyou_s.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/GraphicNodes/gal_s.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/GraphicNodes/dan_s.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/fonts/josefinsans-bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/images/UI/gallerynumberright-animation 1-000.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/UI/gallerynumberleft-animation 1-000.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/localUI/EN/gallerydefault-animation 1-000.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/localUI/EN/gallerylose-animation 1-000.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/localUI/EN/gallerywin-animation 1-000.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/localUI/EN/gallerystrip-animation 1-000.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/UI/macyicon-animation 2-000.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/UI/chyouicon-animation 1-000.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/UI/daneeshaicon-animation 1-000.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/UI/galinaicon-animation 1-000.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/UI/chyouicon-animation 2-000.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/UI/macyicon-animation 1-000.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/UI/daneeshaicon-animation 2-000.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/UI/galinaicon-animation 2-000.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/UI/backbutton-animation 1-000.png" type="Texture" id=21]
+[ext_resource path="res://scripts/Gallery.gd" type="Script" id=22]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 15 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 13 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[node name="Gallery" type="Node2D"]
+script = ExtResource( 22 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+animation = "gallery"
+
+[node name="girls" type="Node2D" parent="."]
+
+[node name="chyou_s" parent="girls" instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 661, 390 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="dan_s" parent="girls" instance=ExtResource( 5 )]
+visible = false
+position = Vector2( 642, 417 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="gal_s" parent="girls" instance=ExtResource( 4 )]
+visible = false
+position = Vector2( 640, 459 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="macy_s" parent="girls" instance=ExtResource( 2 )]
+position = Vector2( 630, 417 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="arrowsL_s" type="Sprite" parent="UI"]
+position = Vector2( 911, 622 )
+scale = Vector2( 0.64, 0.64 )
+texture = ExtResource( 8 )
+
+[node name="arrowl_b" type="Button" parent="UI"]
+margin_left = 852.0
+margin_top = 579.0
+margin_right = 963.0
+margin_bottom = 666.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="arrowsR_s" type="Sprite" parent="UI"]
+position = Vector2( 1082, 622 )
+scale = Vector2( 0.64, 0.64 )
+texture = ExtResource( 7 )
+
+[node name="arrowr_b" type="Button" parent="UI"]
+margin_left = 1029.0
+margin_top = 579.0
+margin_right = 1140.0
+margin_bottom = 666.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="default_s" type="Sprite" parent="UI"]
+position = Vector2( 997, 91 )
+texture = ExtResource( 9 )
+
+[node name="default_b" type="Button" parent="UI"]
+margin_left = 888.0
+margin_top = 36.0
+margin_right = 1106.0
+margin_bottom = 144.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="lose_s" type="Sprite" parent="UI"]
+position = Vector2( 997, 225 )
+texture = ExtResource( 10 )
+
+[node name="lose_b" type="Button" parent="UI"]
+margin_left = 888.0
+margin_top = 171.0
+margin_right = 1106.0
+margin_bottom = 279.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="win_s" type="Sprite" parent="UI"]
+position = Vector2( 997, 360 )
+texture = ExtResource( 11 )
+
+[node name="win_b" type="Button" parent="UI"]
+margin_left = 889.0
+margin_top = 306.0
+margin_right = 1107.0
+margin_bottom = 414.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="strip_s" type="Sprite" parent="UI"]
+position = Vector2( 997, 494 )
+texture = ExtResource( 12 )
+
+[node name="strip_b" type="Button" parent="UI"]
+margin_left = 888.0
+margin_top = 440.0
+margin_right = 1106.0
+margin_bottom = 548.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 980.0
+margin_top = 588.0
+margin_right = 1014.0
+margin_bottom = 648.0
+rect_pivot_offset = Vector2( 17, 31 )
+custom_fonts/font = SubResource( 1 )
+text = "6"
+
+[node name="icons" type="Node2D" parent="."]
+
+[node name="chyou_s" type="AnimatedSprite" parent="icons"]
+position = Vector2( 322, 611 )
+scale = Vector2( 0.21, 0.21 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="chyou_b" type="Button" parent="icons"]
+margin_left = 244.0
+margin_top = 533.0
+margin_right = 401.0
+margin_bottom = 688.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="dan_s" type="AnimatedSprite" parent="icons"]
+position = Vector2( 322, 442 )
+scale = Vector2( 0.21, 0.21 )
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="dan_b" type="Button" parent="icons"]
+margin_left = 244.0
+margin_top = 365.0
+margin_right = 401.0
+margin_bottom = 520.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="gal_s" type="AnimatedSprite" parent="icons"]
+position = Vector2( 322, 273 )
+scale = Vector2( 0.21, 0.21 )
+frames = SubResource( 4 )
+animation = "idle"
+
+[node name="gal_b" type="Button" parent="icons"]
+margin_left = 244.0
+margin_top = 194.0
+margin_right = 401.0
+margin_bottom = 349.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="macy_s" type="AnimatedSprite" parent="icons"]
+position = Vector2( 322, 104 )
+scale = Vector2( 0.21, 0.21 )
+frames = SubResource( 5 )
+animation = "idle"
+
+[node name="macy_b" type="Button" parent="icons"]
+margin_left = 244.0
+margin_top = 26.0
+margin_right = 401.0
+margin_bottom = 181.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="back" type="Node2D" parent="."]
+
+[node name="back_s" type="Sprite" parent="back"]
+position = Vector2( 80, 640 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 21 )
+
+[node name="back_b" type="Button" parent="back"]
+margin_top = 576.0
+margin_right = 128.0
+margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="UI/arrowl_b" to="." method="_on_arrowl_b_pressed"]
+[connection signal="pressed" from="UI/arrowr_b" to="." method="_on_arrowr_b_pressed"]
+[connection signal="pressed" from="UI/default_b" to="." method="_on_default_b_pressed"]
+[connection signal="pressed" from="UI/lose_b" to="." method="_on_lose_b_pressed"]
+[connection signal="pressed" from="UI/win_b" to="." method="_on_win_b_pressed"]
+[connection signal="pressed" from="UI/strip_b" to="." method="_on_strip_b_pressed"]
+[connection signal="pressed" from="icons/chyou_b" to="." method="_on_chyou_b_pressed"]
+[connection signal="pressed" from="icons/dan_b" to="." method="_on_dan_b_pressed"]
+[connection signal="pressed" from="icons/gal_b" to="." method="_on_gal_b_pressed"]
+[connection signal="pressed" from="icons/macy_b" to="." method="_on_macy_b_pressed"]
+[connection signal="pressed" from="back/back_b" to="." method="_on_back_b_pressed"]

@@ -1,0 +1,67 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+[application]
+
+config/name="BlushHandX"
+run/main_scene="res://DISCLAIMERS/DISCLAMER.tscn"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://scripts/Global.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/size/resizable=false
+window/stretch/mode="2d"
+
+[importer_defaults]
+
+texture={
+"flags/filter": false
+}
+
+[locale]
+
+translation_remaps={
+"res://assets/images/localUI/EN/angeb1-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/angeb2-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/angeb3-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/angeb4-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/comparebutton-strip-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/comparebutton-tryagain-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/comparebutton-undressher-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/gallerybutton-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/gallerydefault-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/gallerylose-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/gallerystrip-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/gallerywin-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/gauntletmenubutton-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/playgamebutton-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/retry-animation 1-000.png": PoolStringArray(  ),
+"res://assets/images/localUI/EN/startround-animation 1-000.png": PoolStringArray(  )
+}
+translations=PoolStringArray( "res://localization/Locals.en.translation", "res://localization/Locals.es.translation" )
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+quality/driver/driver_name="GLES2"
+vram_compression/import_etc=true
+vram_compression/import_etc2=false
+environment/default_environment="res://default_env.tres"

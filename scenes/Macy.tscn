@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/GraphicNodes/macy_s.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/GraphicNodes/RPS_UI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/Macy.gd" type="Script" id=4]
+
+[node name="Macy" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+animation = "macy"
+
+[node name="macy_s" parent="." instance=ExtResource( 2 )]
+position = Vector2( 630, 417 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="RPS_UI" parent="." instance=ExtResource( 3 )]
+
+[editable path="RPS_UI"]

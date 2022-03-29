@@ -1,0 +1,233 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/fonts/josefinsans-bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/GirlSelect.gd" type="Script" id=3]
+[ext_resource path="res://assets/images/UI/chyouicon-animation 1-000.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/UI/daneeshaicon-animation 1-000.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/UI/macyicon-animation 2-000.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/UI/galinaicon-animation 2-000.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/UI/chyouicon-animation 2-000.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/UI/macyicon-animation 1-000.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/localUI/EN/startround-animation 1-000.png" type="Texture" id=10]
+[ext_resource path="res://assets/images/UI/backbutton-animation 1-000.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/UI/daneeshaicon-animation 2-000.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/UI/boxes.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/UI/galinaicon-animation 1-000.png" type="Texture" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "hover",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 48
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 26
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 36
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="GirlSelect" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.690196, 0.305882, 0.0117647, 1 )
+animation = "menu"
+
+[node name="chyou" type="Node2D" parent="."]
+
+[node name="chyou_s" type="AnimatedSprite" parent="chyou"]
+position = Vector2( 529, 532 )
+scale = Vector2( 0.28, 0.28 )
+frames = SubResource( 1 )
+animation = "idle"
+
+[node name="chyou_b" type="Button" parent="chyou"]
+margin_left = 424.0
+margin_top = 432.0
+margin_right = 632.0
+margin_bottom = 632.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="dan" type="Node2D" parent="."]
+
+[node name="dan_s" type="AnimatedSprite" parent="dan"]
+position = Vector2( 256, 532 )
+scale = Vector2( 0.28, 0.28 )
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="dan_b" type="Button" parent="dan"]
+margin_left = 152.0
+margin_top = 432.0
+margin_right = 360.0
+margin_bottom = 632.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="gal" type="Node2D" parent="."]
+
+[node name="gal_s" type="AnimatedSprite" parent="gal"]
+position = Vector2( 529, 296 )
+scale = Vector2( 0.28, 0.28 )
+frames = SubResource( 3 )
+animation = "idle"
+
+[node name="gal_b" type="Button" parent="gal"]
+margin_left = 424.0
+margin_top = 192.0
+margin_right = 632.0
+margin_bottom = 400.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="macy" type="Node2D" parent="."]
+
+[node name="macy_s" type="AnimatedSprite" parent="macy"]
+position = Vector2( 256, 296 )
+scale = Vector2( 0.28, 0.28 )
+frames = SubResource( 4 )
+animation = "idle"
+
+[node name="macy_b" type="Button" parent="macy"]
+margin_left = 152.0
+margin_top = 192.0
+margin_right = 360.0
+margin_bottom = 400.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="Choose" type="Label" parent="."]
+margin_left = 157.0
+margin_top = 37.0
+margin_right = 623.0
+margin_bottom = 185.0
+custom_fonts/font = SubResource( 5 )
+text = "CHOOSE_KEY"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="back_s" type="Sprite" parent="Back"]
+position = Vector2( 80, 640 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 11 )
+
+[node name="back_b" type="Button" parent="Back"]
+margin_top = 576.0
+margin_right = 128.0
+margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="start_round" type="Node2D" parent="."]
+
+[node name="Start_s" type="Sprite" parent="start_round"]
+position = Vector2( 960, 608 )
+texture = ExtResource( 10 )
+
+[node name="start_b" type="Button" parent="start_round"]
+margin_left = 784.0
+margin_top = 552.0
+margin_right = 1136.0
+margin_bottom = 664.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="Boxes" type="Sprite" parent="."]
+position = Vector2( 960, 279.75 )
+scale = Vector2( 0.393846, 1.28806 )
+texture = ExtResource( 13 )
+
+[node name="description" type="Label" parent="."]
+margin_left = 760.0
+margin_top = 184.0
+margin_right = 1160.0
+margin_bottom = 472.0
+custom_fonts/font = SubResource( 6 )
+text = "Girl Description"
+autowrap = true
+
+[node name="name" type="Label" parent="."]
+margin_left = 760.0
+margin_top = 104.0
+margin_right = 1160.0
+margin_bottom = 162.0
+custom_fonts/font = SubResource( 7 )
+text = "GIRLNAME"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="chyou/chyou_b" to="." method="_on_chyou_b_pressed"]
+[connection signal="pressed" from="dan/dan_b" to="." method="_on_dan_b_pressed"]
+[connection signal="pressed" from="gal/gal_b" to="." method="_on_gal_b_pressed"]
+[connection signal="pressed" from="macy/macy_b" to="." method="_on_macy_b_pressed"]
+[connection signal="pressed" from="Back/back_b" to="." method="_on_back_b_pressed"]
+[connection signal="pressed" from="start_round/start_b" to="." method="_on_start_b_pressed"]
