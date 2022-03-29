@@ -12,4 +12,6 @@ For now this is an open source project so go wild!
 
 ## HOW TO PLAY THE GAME
 
-Go to releases to the right of the page, under the release post go in assets and download a zip file containing a exe and pck files. Run the exe and don't lose the pck file or the game will break.
+Click this link, go down to assets, download the zip, extract it, then run the exe. Don't lose the pck file or the game breaks
+Github makes it too hard to find releases.
+https://github.com/XPerson5467/BlushHandX/releases/tag/v1.3-alpha
