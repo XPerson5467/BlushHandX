@@ -61,7 +61,7 @@ margin_top = 648.0
 margin_right = 827.0
 margin_bottom = 711.0
 custom_fonts/font = SubResource( 1 )
-text = "2022 v1.3
+text = "2022 v1.3 Pre Release
 Original game by Nitro
 Modified by X-Guy"
 align = 1
