@@ -12,6 +12,10 @@ For now this is an open source project so go wild!
 
 ## HOW TO PLAY THE GAME
 
-Click this link, go down to assets, download the zip, extract it, then run the exe. Don't lose the pck file or the game breaks
+Click this link, go down to assets, download the zip, extract it, then run the exe. Don't lose the pck file or the game breaks.
 Github makes it too hard to find releases.
 https://github.com/XPerson5467/BlushHandX/releases
+
+## CONTACT INFO IF THERE'S ANY ISSUES
+#### Twitter: https://twitter.com/XGuy5467
+#### Discord: X-Person#5467
