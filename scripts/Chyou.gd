@@ -192,8 +192,8 @@ func _chyou_state():
 			chyou_sprite.animation = "W0"
 			chyou_text.text = "W0_CHYOU"
 			if Rps.cheat_hand >= 8:
+				Global.chyou_win = true
 				return
-			Global.gal_win = true
 			return
 		#strip
 		[5, _, "S", _, _]:

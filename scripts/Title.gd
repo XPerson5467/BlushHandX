@@ -21,7 +21,9 @@ func _highlight():
 func _gallery_unlock():
 	var gallery_unlock = [Global.macy_win, Global.gal_win, Global.dan_win, Global.chyou_win]
 	if gallery_unlock == [true, true, true, true]:
-		$Gallery.show()
+		$Gallery.modulate = Color(0,0,0)
+		$Gallery/gallery_b.show()
+		return
 
 func _on_play_b_pressed():
 	Global._change_scene("res://scenes/GirlSelect.tscn")
@@ -34,3 +36,6 @@ func _on_male_b_pressed():
 
 func _on_female_b_pressed():
 	Global.player_body_type = "F"
+
+func _on_gauntlet_b_pressed():
+	Global._change_scene("res://scenes/Gauntlet_Menu.tscn")

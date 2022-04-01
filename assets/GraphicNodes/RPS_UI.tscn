@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://assets/images/RPSHands/scissors-animation 1-000.png" type="Texture" id=1]
 [ext_resource path="res://assets/images/RPSHands/rock-rock-000.png" type="Texture" id=2]
@@ -18,12 +18,60 @@
 [ext_resource path="res://assets/images/localUI/EN/comparebutton-strip-000.png" type="Texture" id=16]
 [ext_resource path="res://assets/images/localUI/EN/comparebutton-tryagain-000.png" type="Texture" id=17]
 [ext_resource path="res://assets/images/localUI/EN/comparebutton-undressher-000.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/UI/gallerynumberright-animation 1-000.png" type="Texture" id=19]
 
 [sub_resource type="DynamicFont" id=1]
 size = 30
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "blink"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "invisible"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -32,14 +80,14 @@ animations = [ {
 "name": "rock",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "paper",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ) ],
 "loop": true,
 "name": "scissors",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "paper",
 "speed": 5.0
 } ]
 
@@ -50,14 +98,14 @@ animations = [ {
 "name": "rock",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "paper",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "scissors",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "paper",
 "speed": 5.0
 } ]
 
@@ -72,14 +120,14 @@ animations = [ {
 "name": "draw",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "win",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 16 ) ],
 "loop": true,
 "name": "lose",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "win",
 "speed": 5.0
 } ]
 
@@ -111,6 +159,17 @@ focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
+[node name="next" type="Sprite" parent="dialogue"]
+position = Vector2( 1016, 664 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 19 )
+
+[node name="indecator" type="AnimationPlayer" parent="dialogue/next"]
+autoplay = "invisible"
+anims/RESET = SubResource( 7 )
+anims/blink = SubResource( 6 )
+anims/invisible = SubResource( 8 )
+
 [node name="hand_box" type="Node2D" parent="."]
 
 [node name="hand_box2" type="Sprite" parent="hand_box"]
@@ -140,7 +199,7 @@ focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Paper_b" type="Button" parent="hand_box"]
+[node name="paper_b" type="Button" parent="hand_box"]
 margin_left = 144.0
 margin_top = 208.0
 margin_right = 240.0
@@ -188,6 +247,7 @@ margin_right = 1262.0
 margin_bottom = 47.0
 custom_fonts/font = SubResource( 1 )
 text = "DON'T CHEAT ASSHOLE"
+align = 2
 
 [node name="player_b" parent="player" instance=ExtResource( 7 )]
 position = Vector2( 1080, 320 )
@@ -248,7 +308,7 @@ flat = true
 
 [connection signal="pressed" from="dialogue/box_b" to="." method="_on_box_b_pressed"]
 [connection signal="pressed" from="hand_box/rock_b" to="." method="_on_rock_b_pressed"]
-[connection signal="pressed" from="hand_box/Paper_b" to="." method="_on_Paper_b_pressed"]
+[connection signal="pressed" from="hand_box/paper_b" to="." method="_on_paper_b_pressed"]
 [connection signal="pressed" from="hand_box/scissors_b" to="." method="_on_scissors_b_pressed"]
 [connection signal="pressed" from="back/back_b" to="." method="_on_back_b_pressed"]
 [connection signal="pressed" from="player/cheat_b" to="." method="_on_cheat_b_pressed"]

@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/fonts/josefinsans-bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/images/localUI/EN/comparebutton-tryagain-000.png" type="Texture" id=2]
+[ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/UI/backbutton-animation 1-000.png" type="Texture" id=4]
+[ext_resource path="res://scripts/Gauntlet_Lose.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 86
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Gauntlet_Lose" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.588235, 0.403922, 0.815686, 1 )
+animation = "gauntlet-lose"
+
+[node name="try_again" type="Sprite" parent="."]
+position = Vector2( 928, 624 )
+texture = ExtResource( 2 )
+
+[node name="try_again_b" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+
+[node name="lose1" type="Label" parent="."]
+margin_left = 704.0
+margin_top = 96.0
+margin_right = 1172.0
+margin_bottom = 273.0
+custom_fonts/font = SubResource( 1 )
+text = "LOSE_KEY"
+align = 1
+
+[node name="lose2" type="Label" parent="."]
+margin_left = 704.0
+margin_top = 224.0
+margin_right = 1172.0
+margin_bottom = 576.0
+custom_fonts/font = SubResource( 2 )
+text = "GAUNTLET_LOSE"
+autowrap = true
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="back_s" type="Sprite" parent="Back"]
+position = Vector2( 80, 640 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 4 )
+
+[node name="back_b" type="Button" parent="Back"]
+margin_top = 576.0
+margin_right = 128.0
+margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="try_again_b" to="." method="_on_try_again_b_pressed"]
+[connection signal="pressed" from="Back/back_b" to="." method="_on_back_b_pressed"]

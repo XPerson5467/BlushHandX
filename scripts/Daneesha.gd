@@ -195,8 +195,8 @@ func _dan_state():
 			dan_sprite.animation = "W0"
 			dan_text.text = "W0_DAN"
 			if Rps.cheat_hand >= 8:
+				Global.dan_win = true
 				return
-			Global.gal_win = true
 			return
 		#strip
 		[5, _, "S", _, _]:

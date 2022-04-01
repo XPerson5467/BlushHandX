@@ -5,6 +5,8 @@ onready var gal_win = false
 onready var dan_win = false
 onready var chyou_win = false
 
+onready var gauntlet_win = false
+
 onready var player_body_type = "M"
 
 func _change_scene(room):

@@ -97,13 +97,14 @@ enabled_focus_mode = 0
 flat = true
 
 [node name="Gallery" type="Node2D" parent="."]
-visible = false
+modulate = Color( 0.25, 0.25, 0.25, 1 )
 
 [node name="gallery_s" type="Sprite" parent="Gallery"]
 position = Vector2( 1024, 517.5 )
 texture = ExtResource( 4 )
 
 [node name="gallery_b" type="Button" parent="Gallery"]
+visible = false
 margin_left = 848.0
 margin_top = 464.0
 margin_right = 1200.0
@@ -121,6 +122,7 @@ texture = ExtResource( 8 )
 centered = false
 
 [node name="femalebutton_s" type="Sprite" parent="BodyType"]
+modulate = Color( 0.54, 0.46, 0.46, 1 )
 position = Vector2( 240, 448 )
 scale = Vector2( 0.468, 0.468 )
 texture = ExtResource( 6 )
@@ -165,6 +167,7 @@ anims/RESET = SubResource( 2 )
 anims/title = SubResource( 3 )
 
 [connection signal="pressed" from="Play/play_b" to="." method="_on_play_b_pressed"]
+[connection signal="pressed" from="Gauntlet/gauntlet_b" to="." method="_on_gauntlet_b_pressed"]
 [connection signal="pressed" from="Gallery/gallery_b" to="." method="_on_gallery_b_pressed"]
 [connection signal="pressed" from="BodyType/male_b" to="." method="_on_male_b_pressed"]
 [connection signal="pressed" from="BodyType/female_b" to="." method="_on_female_b_pressed"]

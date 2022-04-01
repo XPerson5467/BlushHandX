@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/fonts/josefinsans-bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/images/BG/sprite4-animation 1-000.png" type="Texture" id=2]
+[ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/localUI/EN/playgamebutton-animation 1-000.png" type="Texture" id=4]
+[ext_resource path="res://assets/images/UI/backbutton-animation 1-000.png" type="Texture" id=5]
+[ext_resource path="res://scripts/Gauntlet_Menu.gd" type="Script" id=6]
+[ext_resource path="res://assets/images/localUI/EN/gallerybutton-animation 1-000.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Gauntlet_Menu" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+modulate = Color( 0.411765, 0, 0.6, 1 )
+animation = "menu"
+
+[node name="gauntlet_logo" type="Sprite" parent="."]
+position = Vector2( 704, 348.5 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 128.0
+margin_top = 384.0
+margin_right = 704.0
+margin_bottom = 576.0
+custom_fonts/font = SubResource( 1 )
+text = "GAUNTLET_DESC"
+autowrap = true
+
+[node name="gallery_s" type="Sprite" parent="."]
+modulate = Color( 0.25, 0.25, 0.25, 1 )
+position = Vector2( 576, 640 )
+texture = ExtResource( 7 )
+
+[node name="gallery_b" type="Button" parent="."]
+visible = false
+margin_left = 400.0
+margin_top = 584.0
+margin_right = 760.0
+margin_bottom = 696.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="play_s" type="Sprite" parent="."]
+position = Vector2( 195, 641 )
+texture = ExtResource( 4 )
+
+[node name="play_b" type="Button" parent="."]
+margin_left = 16.0
+margin_top = 584.0
+margin_right = 376.0
+margin_bottom = 696.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="back_s" type="Sprite" parent="Back"]
+position = Vector2( 80, 64.0001 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 5 )
+
+[node name="back_b" type="Button" parent="Back"]
+margin_right = 128.0
+margin_bottom = 144.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="gallery_b" to="." method="_on_gallery_b_pressed"]
+[connection signal="pressed" from="play_b" to="." method="_on_play_b_pressed"]
+[connection signal="pressed" from="Back/back_b" to="." method="_on_back_b_pressed"]

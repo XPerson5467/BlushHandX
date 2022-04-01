@@ -1,0 +1,131 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/GraphicNodes/gauntlet_s.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Gauntlet_Gallery.gd" type="Script" id=3]
+[ext_resource path="res://assets/fonts/josefinsans-bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://assets/images/UI/gallerynumberright-animation 1-000.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/UI/gallerynumberleft-animation 1-000.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/localUI/EN/gallerydefault-animation 1-000.png" type="Texture" id=9]
+[ext_resource path="res://assets/images/localUI/EN/gallerywin-animation 1-000.png" type="Texture" id=11]
+[ext_resource path="res://assets/images/localUI/EN/gallerystrip-animation 1-000.png" type="Texture" id=12]
+[ext_resource path="res://assets/images/UI/backbutton-animation 1-000.png" type="Texture" id=21]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="Gauntlet_Gallery" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0, 0.0048334, 0.29, 1 )
+animation = "gauntlet"
+
+[node name="gauntlet_s" parent="." instance=ExtResource( 2 )]
+position = Vector2( 640, 395 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="arrowsL_s" type="Sprite" parent="UI"]
+position = Vector2( 1043, 646 )
+scale = Vector2( 0.64, 0.64 )
+texture = ExtResource( 8 )
+
+[node name="arrowl_b" type="Button" parent="UI"]
+margin_left = 984.0
+margin_top = 603.0
+margin_right = 1095.0
+margin_bottom = 690.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="arrowsR_s" type="Sprite" parent="UI"]
+position = Vector2( 1214, 646 )
+scale = Vector2( 0.64, 0.64 )
+texture = ExtResource( 7 )
+
+[node name="arrowr_b" type="Button" parent="UI"]
+margin_left = 1161.0
+margin_top = 603.0
+margin_right = 1272.0
+margin_bottom = 690.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="default_s" type="Sprite" parent="UI"]
+position = Vector2( 1129, 247 )
+texture = ExtResource( 9 )
+
+[node name="default_b" type="Button" parent="UI"]
+margin_left = 1020.0
+margin_top = 192.0
+margin_right = 1238.0
+margin_bottom = 300.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="win_s" type="Sprite" parent="UI"]
+position = Vector2( 1129, 384 )
+texture = ExtResource( 11 )
+
+[node name="win_b" type="Button" parent="UI"]
+margin_left = 1021.0
+margin_top = 330.0
+margin_right = 1239.0
+margin_bottom = 438.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="strip_s" type="Sprite" parent="UI"]
+position = Vector2( 1129, 518 )
+texture = ExtResource( 12 )
+
+[node name="strip_b" type="Button" parent="UI"]
+margin_left = 1020.0
+margin_top = 464.0
+margin_right = 1238.0
+margin_bottom = 572.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 1112.0
+margin_top = 612.0
+margin_right = 1146.0
+margin_bottom = 672.0
+rect_pivot_offset = Vector2( 17, 31 )
+custom_fonts/font = SubResource( 1 )
+text = "6"
+
+[node name="icons" type="Node2D" parent="."]
+
+[node name="back" type="Node2D" parent="."]
+
+[node name="back_s" type="Sprite" parent="back"]
+position = Vector2( 80, 640 )
+scale = Vector2( 0.33, 0.33 )
+texture = ExtResource( 21 )
+
+[node name="back_b" type="Button" parent="back"]
+margin_top = 576.0
+margin_right = 128.0
+margin_bottom = 720.0
+focus_mode = 0
+enabled_focus_mode = 0
+flat = true
+
+[connection signal="pressed" from="UI/arrowl_b" to="." method="_on_arrowl_b_pressed"]
+[connection signal="pressed" from="UI/arrowr_b" to="." method="_on_arrowr_b_pressed"]
+[connection signal="pressed" from="UI/default_b" to="." method="_on_default_b_pressed"]
+[connection signal="pressed" from="UI/win_b" to="." method="_on_win_b_pressed"]
+[connection signal="pressed" from="UI/strip_b" to="." method="_on_strip_b_pressed"]
+[connection signal="pressed" from="back/back_b" to="." method="_on_back_b_pressed"]

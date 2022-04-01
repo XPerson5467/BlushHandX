@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/GraphicNodes/gauntlet_s.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/fonts/josefinsans-bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/GraphicNodes/RPS_UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Gauntlet.gd" type="Script" id=5]
+
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="Gauntlet" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+animation = "gauntlet"
+
+[node name="gauntlet_s" parent="." instance=ExtResource( 1 )]
+position = Vector2( 640, 395 )
+scale = Vector2( 0.5, 0.5 )
+animation = "D11"
+
+[node name="name" type="Label" parent="."]
+margin_left = 36.0
+margin_top = 19.0
+margin_right = 40.0
+margin_bottom = 14.0
+theme = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
+text = "OPPONENT NAME HERE"
+
+[node name="RPS_UI" parent="." instance=ExtResource( 4 )]
+
+[node name="player_b" parent="RPS_UI/player" index="2"]
+animation = "male_t"
+frame = 1
+
+[editable path="RPS_UI"]
