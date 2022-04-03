@@ -190,11 +190,11 @@ func _gal_state():
 			return
 		[0, 0, "L", "M", _]:
 			gal_sprite.animation = "L0"
-			gal_text.text = "L0-M_GAL"
+			gal_text.text = "L0-0-M_GAL"
 			return
 		[0, 0, "L", "F", _]:
 			gal_sprite.animation = "L0"
-			gal_text.text = "L0-F_GAL"
+			gal_text.text = "L0-0-F_GAL"
 			return
 		#Win
 		[5, _, "W", _, _]:
@@ -220,12 +220,10 @@ func _gal_state():
 		[0, _, "W", _, _]:
 			gal_sprite.animation = "W0"
 			gal_text.text = "W0_GAL"
-			if Rps.cheat_hand <= 8:
+			if Rps.cheat_hand < 8:
 				Global.gal_win = true
 				if Rps.player_score == 4:
 					Global.gal_flawless = true
-					return
-				return
 			return
 		#strip
 		[5, _, "S", _, _]:

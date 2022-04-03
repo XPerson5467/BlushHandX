@@ -180,7 +180,7 @@ func _macy_state():
 		[0, _, "W", _, _]:
 			macy_sprite.animation = "W0"
 			macy_text.text = "W0_MACY"
-			if Rps.cheat_hand <= 8:
+			if Rps.cheat_hand < 8:
 				Global.macy_win = true
 				if Rps.player_score == 4:
 					Global.macy_flawless = true

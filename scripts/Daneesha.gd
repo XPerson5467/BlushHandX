@@ -201,7 +201,7 @@ func _dan_state():
 		[0, _, "W", _, _]:
 			dan_sprite.animation = "W0"
 			dan_text.text = "W0_DAN"
-			if Rps.cheat_hand <= 8:
+			if Rps.cheat_hand < 8:
 				Global.dan_win = true
 				if Rps.player_score == 4:
 					Global.dan_flawless = true

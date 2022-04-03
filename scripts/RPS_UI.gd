@@ -22,11 +22,13 @@ func _rps_ready():
 	girl_score = 5
 	player_score = 4
 	gauntlet_mode = false
+	_player_sprite()
 
 func _gauntlet_ready():
 	girl_score = 11
 	player_score = 1
 	gauntlet_mode = true
+	_player_sprite()
 
 func _rps_process():
 	girl_state = [girl_score, player_score, current_scene, Global.player_body_type, result_hand]

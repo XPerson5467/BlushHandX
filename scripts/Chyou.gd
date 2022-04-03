@@ -196,7 +196,7 @@ func _chyou_state():
 		[0, _, "W", _, _]:
 			chyou_sprite.animation = "W0"
 			chyou_text.text = "W0_CHYOU"
-			if Rps.cheat_hand <= 8:
+			if Rps.cheat_hand < 8:
 				Global.chyou_win = true
 				if Rps.player_score == 4:
 					Global.chyou_flawless = true
