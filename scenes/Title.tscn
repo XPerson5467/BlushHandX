@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/images/localUI/EN/gallerybutton-animation 1-000.png" type="Texture" id=4]
 [ext_resource path="res://assets/images/localUI/EN/gauntletmenubutton-animation 1-000.png" type="Texture" id=5]
 [ext_resource path="res://assets/images/UI/femalebutton-animation 1-000.png" type="Texture" id=6]
-[ext_resource path="res://assets/images/UI/logo-animation 1-000.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/UI/logo-animation 1-001.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/UI/malebutton-animation 1-000.png" type="Texture" id=8]
 [ext_resource path="res://scripts/Title.gd" type="Script" id=9]
 [ext_resource path="res://assets/images/UI/key-animation 1-000.png" type="Texture" id=10]
@@ -54,6 +54,7 @@ script = ExtResource( 9 )
 
 [node name="Background" parent="." instance=ExtResource( 1 )]
 modulate = Color( 0.690196, 0.305882, 0.0117647, 1 )
+show_behind_parent = true
 animation = "menu"
 
 [node name="copyright" type="Label" parent="."]
