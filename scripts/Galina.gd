@@ -68,17 +68,17 @@ func _gal_state():
 			gal_sprite.animation = "L5"
 			gal_text.text = "L5-0_GAL"
 			return
-		[4, 3, "L", _, _]:
-			gal_sprite.animation = "L4"
-			gal_text.text = "L4-3_GAL"
-			return
 		[4, 3, "L", "M", _]:
 			gal_sprite.animation = "L4"
 			gal_text.text = "L4-3-M_GAL"
 			return
-		[4, 2, "L", "F", _]:
+		[4, 3, "L", "F", _]:
 			gal_sprite.animation = "L4"
-			gal_text.text = "L4-2-F_GAL"
+			gal_text.text = "L4-3-F_GAL"
+			return
+		[4, 2, "L", _, _]:
+			gal_sprite.animation = "L4"
+			gal_text.text = "L4-2_GAL"
 			return
 		[4, 1, "L", _, _]:
 			gal_sprite.animation = "L4"
@@ -136,11 +136,11 @@ func _gal_state():
 			gal_sprite.animation = "L2"
 			gal_text.text = "L2-1-F_GAL"
 			return
-		[2, 0, "L", "F", _]:
+		[2, 0, "L", "M", _]:
 			gal_sprite.animation = "L2"
 			gal_text.text = "L2-0-M_GAL"
 			return
-		[2, 0, "L", "M", _]:
+		[2, 0, "L", "F", _]:
 			gal_sprite.animation = "L2"
 			gal_text.text = "L2-0-F_GAL"
 			return
@@ -160,7 +160,7 @@ func _gal_state():
 			gal_sprite.animation = "L1"
 			gal_text.text = "L1-2-F_GAL"
 			return
-		[1, 1, "L", "M", _]:
+		[1, 1, "L", _, _]:
 			gal_sprite.animation = "L1"
 			gal_text.text = "L1-1_GAL"
 			return
