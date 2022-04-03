@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/fonts/josefinsans-bold.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/images/UI/logo-animation 1-000.png" type="Texture" id=7]
 [ext_resource path="res://assets/images/UI/malebutton-animation 1-000.png" type="Texture" id=8]
 [ext_resource path="res://scripts/Title.gd" type="Script" id=9]
+[ext_resource path="res://assets/images/UI/key-animation 1-000.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 18
@@ -166,8 +167,26 @@ method_call_mode = 1
 anims/RESET = SubResource( 2 )
 anims/title = SubResource( 3 )
 
+[node name="key_s" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1184, 96 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="key_b" type="Button" parent="key_s"]
+margin_left = -202.0
+margin_top = -198.0
+margin_right = 198.0
+margin_bottom = 202.0
+action_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [connection signal="pressed" from="Play/play_b" to="." method="_on_play_b_pressed"]
 [connection signal="pressed" from="Gauntlet/gauntlet_b" to="." method="_on_gauntlet_b_pressed"]
 [connection signal="pressed" from="Gallery/gallery_b" to="." method="_on_gallery_b_pressed"]
 [connection signal="pressed" from="BodyType/male_b" to="." method="_on_male_b_pressed"]
 [connection signal="pressed" from="BodyType/female_b" to="." method="_on_female_b_pressed"]
+[connection signal="pressed" from="key_s/key_b" to="." method="_on_key_b_pressed"]

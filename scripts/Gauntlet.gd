@@ -16,6 +16,7 @@ func _process(delta):
 	Rps._rps_process()
 	_gauntlet_hands()
 	_gauntlet_state()
+	$RPS_UI/compare/girl_hand.frame = 0
 
 func _gauntlet_state():
 	match Rps.girl_state:

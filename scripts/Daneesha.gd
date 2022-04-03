@@ -13,6 +13,7 @@ func _process(delta):
 	Rps._rps_process()
 	_dan_hands()
 	_dan_state()
+	$RPS_UI/compare/girl_hand.frame = 3
 
 func _dan_state():
 	match Rps.girl_state:
@@ -22,26 +23,32 @@ func _dan_state():
 			dan_text.text = "D5_DAN"
 			return
 		[4, _, "D", "M", _]:
+			$clothing/DanCloth1.show()
 			dan_sprite.animation = "D4"
 			dan_text.text = "D4-M_DAN"
 			return
 		[4, _, "D", "F", _]:
+			$clothing/DanCloth1.show()
 			dan_sprite.animation = "D4"
 			dan_text.text = "D4-F_DAN"
 			return
 		[3, _, "D", _, _]:
+			$clothing/DanCloth2.show()
 			dan_sprite.animation = "D3"
 			dan_text.text = "D3_DAN"
 			return
 		[2, _, "D", _, _]:
+			$clothing/DanCloth3.show()
 			dan_sprite.animation = "D2"
 			dan_text.text = "D2_DAN"
 			return
 		[1, _, "D", _, _]:
+			$clothing/DanCloth4.show()
 			dan_sprite.animation = "D1"
 			dan_text.text = "D1_DAN"
 			return
 		[0, _, "D", _, _]:
+			$clothing/DanCloth5.show()
 			dan_sprite.animation = "D0"
 			dan_text.text = "D0_DAN"
 			return
@@ -194,8 +201,11 @@ func _dan_state():
 		[0, _, "W", _, _]:
 			dan_sprite.animation = "W0"
 			dan_text.text = "W0_DAN"
-			if Rps.cheat_hand >= 8:
+			if Rps.cheat_hand <= 8:
 				Global.dan_win = true
+				if Rps.player_score == 4:
+					Global.dan_flawless = true
+					return
 				return
 			return
 		#strip

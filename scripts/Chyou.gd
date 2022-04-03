@@ -13,6 +13,7 @@ func _process(delta):
 	Rps._rps_process()
 	_chyou_hands()
 	_chyou_state()
+	$RPS_UI/compare/girl_hand.frame = 4
 
 func _chyou_state():
 	match Rps.girl_state:
@@ -22,26 +23,30 @@ func _chyou_state():
 			chyou_text.text = "D5_CHYOU"
 			return
 		[4, _, "D", _, _]:
+			$clothing/ChyouCloth1.show()
 			chyou_sprite.animation = "D4"
 			chyou_text.text = "D4_CHYOU"
 			return
 		[3, _, "D", _, _]:
+			$clothing/ChyouCloth2.show()
 			chyou_sprite.animation = "D3"
 			chyou_text.text = "D3_CHYOU"
 			return
 		[2, _, "D", _, _]:
+			$clothing/ChyouCloth3.show()
 			chyou_sprite.animation = "D2"
 			chyou_text.text = "D2_CHYOU"
 			return
 		[1, _, "D", _, _]:
+			$clothing/ChyouCloth4.show()
 			chyou_sprite.animation = "D1"
 			chyou_text.text = "D1_CHYOU"
 			return
 		[0, _, "D", _, _]:
+			$clothing/ChyouCloth5.show()
 			chyou_sprite.animation = "D0"
 			chyou_text.text = "D0_CHYOU"
 			return
-		#lose
 		#lose
 		[5, 3, "L", _, _]:
 			chyou_sprite.animation = "L5"
@@ -191,8 +196,11 @@ func _chyou_state():
 		[0, _, "W", _, _]:
 			chyou_sprite.animation = "W0"
 			chyou_text.text = "W0_CHYOU"
-			if Rps.cheat_hand >= 8:
+			if Rps.cheat_hand <= 8:
 				Global.chyou_win = true
+				if Rps.player_score == 4:
+					Global.chyou_flawless = true
+					return
 				return
 			return
 		#strip

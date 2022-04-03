@@ -6,6 +6,8 @@ onready var current_scene = "D"
 onready var cheat_hand = 0
 var gauntlet_mode
 
+var all_clear
+
 var player_hand
 var girl_hand
 
@@ -29,6 +31,7 @@ func _gauntlet_ready():
 func _rps_process():
 	girl_state = [girl_score, player_score, current_scene, Global.player_body_type, result_hand]
 	hand_compare = [player_hand,girl_hand]
+	all_clear = [Global.macy_flawless, Global.gal_flawless, Global.dan_flawless, Global.chyou_flawless, Global.secret_encounter]
 	_player_sprite()
 	_girl_hand_sprite()
 	_hand_logic()
@@ -186,6 +189,9 @@ func _on_box_b_pressed():
 				if gauntlet_mode == true:
 					Global._change_scene("res://scenes/Gauntlet_Win.tscn")
 					return
+				if all_clear == [true,true,true,true,false]:
+					Global._change_scene("res://scenes/Secret_Ange.tscn")
+					return
 				Global._change_scene("res://scenes/GirlSelect.tscn")
 				return
 			girl_score -= 1
@@ -215,3 +221,15 @@ func _cheat_hand():
 
 func _on_cheat_b_pressed():
 	cheat_hand += 1
+
+func _on_hide_ui_toggled(button_pressed):
+	if button_pressed == true:
+		$hide_ui_s.animation = "hidden"
+		$dialogue.hide()
+		$hand_box.hide()
+		$player.hide()
+		return
+	$hide_ui_s.animation = "shown"
+	$dialogue.show()
+	$hand_box.show()
+	$player.show()

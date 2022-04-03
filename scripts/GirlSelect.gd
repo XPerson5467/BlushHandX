@@ -6,9 +6,16 @@ func _on_back_b_pressed():
 	Global._change_scene("res://scenes/Title.tscn")
 
 func _process(delta):
+	_highlight()
+	_win_check()
+
+func _highlight():
 	match girl_select:
 		"macy":
 			$macy/macy_s.set_animation("hover")
+			$gal/gal_s.set_animation("idle")
+			$dan/dan_s.set_animation("idle")
+			$chyou/chyou_s.set_animation("idle")
 			$name.set_text("MACY")
 			$description.set_text(tr("MACY_DEC"))
 		"gal":
@@ -32,6 +39,24 @@ func _process(delta):
 			$chyou/chyou_s.set_animation("hover")
 			$name.set_text("CHYOU")
 			$description.set_text(tr("CHYOU_DEC"))
+
+func _win_check():
+	if Global.macy_win == true:
+		$macy/macy_s.frame = 1
+	if Global.macy_flawless == true:
+		$macy/macy_star.show()
+	if Global.gal_win == true:
+		$gal/gal_s.frame = 1
+	if Global.gal_flawless == true:
+		$gal/gal_star.show()
+	if Global.dan_win == true:
+		$dan/dan_s.frame = 1
+	if Global.dan_flawless == true:
+		$dan/dan_star.show()
+	if Global.chyou_win == true:
+		$chyou/chyou_s.frame = 1
+	if Global.chyou_flawless == true:
+		$chyou/chyou_star.show()
 
 func _on_macy_b_pressed():
 	girl_select = "macy"

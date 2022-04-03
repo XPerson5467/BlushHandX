@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/fonts/josefinsans-bold.ttf" type="DynamicFontData" id=2]
@@ -12,17 +12,26 @@
 [ext_resource path="res://assets/images/localUI/EN/startround-animation 1-000.png" type="Texture" id=10]
 [ext_resource path="res://assets/images/UI/backbutton-animation 1-000.png" type="Texture" id=11]
 [ext_resource path="res://assets/images/UI/daneeshaicon-animation 2-000.png" type="Texture" id=12]
-[ext_resource path="res://assets/images/UI/boxes.png" type="Texture" id=13]
+[ext_resource path="res://assets/images/UI/girlbox.png" type="Texture" id=13]
 [ext_resource path="res://assets/images/UI/galinaicon-animation 1-000.png" type="Texture" id=14]
+[ext_resource path="res://assets/images/UI/macyicon-animation 2-001.png" type="Texture" id=15]
+[ext_resource path="res://assets/images/UI/daneeshaicon-animation 2-001.png" type="Texture" id=16]
+[ext_resource path="res://assets/images/UI/chyouicon-animation 2-001.png" type="Texture" id=17]
+[ext_resource path="res://assets/images/UI/daneeshaicon-animation 1-001.png" type="Texture" id=18]
+[ext_resource path="res://assets/images/UI/galinaicon-animation 2-001.png" type="Texture" id=19]
+[ext_resource path="res://assets/images/UI/galinaicon-animation 1-001.png" type="Texture" id=20]
+[ext_resource path="res://assets/images/UI/macyicon-animation 1-001.png" type="Texture" id=21]
+[ext_resource path="res://assets/images/UI/chyouicon-animation 1-001.png" type="Texture" id=22]
+[ext_resource path="res://assets/images/UI/flawless-animation 1-000.png" type="Texture" id=23]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 17 ) ],
 "loop": true,
 "name": "hover",
 "speed": 5.0
@@ -30,12 +39,12 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "hover",
 "speed": 5.0
@@ -43,12 +52,12 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 14 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "hover",
 "speed": 5.0
@@ -56,12 +65,12 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "hover",
 "speed": 5.0
@@ -100,6 +109,12 @@ scale = Vector2( 0.28, 0.28 )
 frames = SubResource( 1 )
 animation = "idle"
 
+[node name="chyou_star" type="Sprite" parent="chyou"]
+visible = false
+position = Vector2( 624, 432 )
+scale = Vector2( 0.28, 0.28 )
+texture = ExtResource( 23 )
+
 [node name="chyou_b" type="Button" parent="chyou"]
 margin_left = 424.0
 margin_top = 432.0
@@ -116,6 +131,12 @@ position = Vector2( 256, 532 )
 scale = Vector2( 0.28, 0.28 )
 frames = SubResource( 2 )
 animation = "idle"
+
+[node name="dan_star" type="Sprite" parent="dan"]
+visible = false
+position = Vector2( 352, 432 )
+scale = Vector2( 0.28, 0.28 )
+texture = ExtResource( 23 )
 
 [node name="dan_b" type="Button" parent="dan"]
 margin_left = 152.0
@@ -134,6 +155,12 @@ scale = Vector2( 0.28, 0.28 )
 frames = SubResource( 3 )
 animation = "idle"
 
+[node name="gal_star" type="Sprite" parent="gal"]
+visible = false
+position = Vector2( 624, 200 )
+scale = Vector2( 0.28, 0.28 )
+texture = ExtResource( 23 )
+
 [node name="gal_b" type="Button" parent="gal"]
 margin_left = 424.0
 margin_top = 192.0
@@ -150,6 +177,12 @@ position = Vector2( 256, 296 )
 scale = Vector2( 0.28, 0.28 )
 frames = SubResource( 4 )
 animation = "idle"
+
+[node name="macy_star" type="Sprite" parent="macy"]
+visible = false
+position = Vector2( 352, 200 )
+scale = Vector2( 0.28, 0.28 )
+texture = ExtResource( 23 )
 
 [node name="macy_b" type="Button" parent="macy"]
 margin_left = 152.0
@@ -189,36 +222,36 @@ flat = true
 [node name="start_round" type="Node2D" parent="."]
 
 [node name="Start_s" type="Sprite" parent="start_round"]
-position = Vector2( 960, 608 )
+position = Vector2( 918, 613 )
 texture = ExtResource( 10 )
 
 [node name="start_b" type="Button" parent="start_round"]
-margin_left = 784.0
-margin_top = 552.0
-margin_right = 1136.0
-margin_bottom = 664.0
+margin_left = 744.0
+margin_top = 560.0
+margin_right = 1096.0
+margin_bottom = 672.0
 focus_mode = 0
 enabled_focus_mode = 0
 flat = true
 
-[node name="Boxes" type="Sprite" parent="."]
-position = Vector2( 960, 279.75 )
-scale = Vector2( 0.393846, 1.28806 )
+[node name="Girlbox" type="Sprite" parent="."]
+position = Vector2( 692, 53 )
 texture = ExtResource( 13 )
+centered = false
 
 [node name="description" type="Label" parent="."]
-margin_left = 760.0
+margin_left = 728.0
 margin_top = 184.0
-margin_right = 1160.0
-margin_bottom = 472.0
+margin_right = 1128.0
+margin_bottom = 480.0
 custom_fonts/font = SubResource( 6 )
 text = "Girl Description"
 autowrap = true
 
 [node name="name" type="Label" parent="."]
-margin_left = 760.0
+margin_left = 728.0
 margin_top = 104.0
-margin_right = 1160.0
+margin_right = 1128.0
 margin_bottom = 162.0
 custom_fonts/font = SubResource( 7 )
 text = "GIRLNAME"

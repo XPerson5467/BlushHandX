@@ -13,6 +13,7 @@ func _process(delta):
 	Rps._rps_process()
 	_macy_hands()
 	_macy_state()
+	$RPS_UI/compare/girl_hand.frame = 1
 
 func _macy_state():
 	match Rps.girl_state:
@@ -22,22 +23,27 @@ func _macy_state():
 			macy_text.text = "D5_MACY"
 			return
 		[4, _, "D", _, _]:
+			$clothing/MacyCloth1.show()
 			macy_sprite.animation = "D4"
 			macy_text.text = "D4_MACY"
 			return
 		[3, _, "D", _, _]:
+			$clothing/MacyCloth2.show()
 			macy_sprite.animation = "D3"
 			macy_text.text = "D3_MACY"
 			return
 		[2, _, "D", _, _]:
+			$clothing/MacyCloth3.show()
 			macy_sprite.animation = "D2"
 			macy_text.text = "D2_MACY"
 			return
 		[1, _, "D", _, _]:
+			$clothing/MacyCloth4.show()
 			macy_sprite.animation = "D1"
 			macy_text.text = "D1_MACY"
 			return
 		[0, _, "D", _, _]:
+			$clothing/MacyCloth5.show()
 			macy_sprite.animation = "D0"
 			macy_text.text = "D0_MACY"
 			return
@@ -174,9 +180,12 @@ func _macy_state():
 		[0, _, "W", _, _]:
 			macy_sprite.animation = "W0"
 			macy_text.text = "W0_MACY"
-			if Rps.cheat_hand >= 8:
+			if Rps.cheat_hand <= 8:
+				Global.macy_win = true
+				if Rps.player_score == 4:
+					Global.macy_flawless = true
+					return
 				return
-			Global.macy_win = true
 			return
 		#strip
 		[5, _, "S", _, _]:

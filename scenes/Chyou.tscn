@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/GraphicNodes/chyou_s.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/GraphicNodes/RPS_UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Chyou.gd" type="Script" id=4]
+[ext_resource path="res://assets/images/Clothes/chyou_cloth1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Clothes/chyou_cloth5.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Clothes/chyou_cloth4.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Clothes/chyou_cloth2.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Clothes/chyou_cloth3.png" type="Texture" id=9]
 
 [node name="Chyou" type="Node2D"]
 script = ExtResource( 4 )
@@ -13,5 +18,33 @@ script = ExtResource( 4 )
 [node name="chyou_s" parent="." instance=ExtResource( 2 )]
 position = Vector2( 661, 390 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="clothing" type="Node2D" parent="."]
+scale = Vector2( 0.4, 0.4 )
+
+[node name="ChyouCloth1" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2710, 165 )
+texture = ExtResource( 5 )
+
+[node name="ChyouCloth2" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 3027.5, 320 )
+texture = ExtResource( 8 )
+
+[node name="ChyouCloth3" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2402, 168.5 )
+texture = ExtResource( 9 )
+
+[node name="ChyouCloth4" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2472.5, 420 )
+texture = ExtResource( 7 )
+
+[node name="ChyouCloth5" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2745, 410 )
+texture = ExtResource( 6 )
 
 [node name="RPS_UI" parent="." instance=ExtResource( 3 )]

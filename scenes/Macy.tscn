@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/GraphicNodes/macy_s.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/GraphicNodes/RPS_UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Macy.gd" type="Script" id=4]
+[ext_resource path="res://assets/images/Clothes/macy_cloth1.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Clothes/macy_cloth2.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Clothes/macy_cloth3.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Clothes/macy_cloth4.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Clothes/macy_cloth5.png" type="Texture" id=9]
 
 [node name="Macy" type="Node2D"]
 script = ExtResource( 4 )
@@ -14,6 +19,34 @@ animation = "macy"
 [node name="macy_s" parent="." instance=ExtResource( 2 )]
 position = Vector2( 630, 417 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="clothing" type="Node2D" parent="."]
+scale = Vector2( 0.4, 0.4 )
+
+[node name="MacyCloth1" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2420, 160 )
+texture = ExtResource( 5 )
+
+[node name="MacyCloth2" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2400, 440 )
+texture = ExtResource( 6 )
+
+[node name="MacyCloth3" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2700, 300 )
+texture = ExtResource( 7 )
+
+[node name="MacyCloth4" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2920, 80 )
+texture = ExtResource( 8 )
+
+[node name="MacyCloth5" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2940, 240 )
+texture = ExtResource( 9 )
 
 [node name="RPS_UI" parent="." instance=ExtResource( 3 )]
 

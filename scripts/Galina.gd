@@ -13,6 +13,7 @@ func _process(delta):
 	Rps._rps_process()
 	_gal_hands()
 	_gal_state()
+	$RPS_UI/compare/girl_hand.frame = 2
 
 func _gal_state():
 	match Rps.girl_state:
@@ -22,22 +23,27 @@ func _gal_state():
 			gal_text.text = "D5_GAL"
 			return
 		[4, _, "D", _, _]:
+			$clothing/GalCloth1.show()
 			gal_sprite.animation = "D4"
 			gal_text.text = "D4_GAL"
 			return
 		[3, _, "D", _, _]:
+			$clothing/GalCloth2.show()
 			gal_sprite.animation = "D3"
 			gal_text.text = "D3_GAL"
 			return
 		[2, _, "D", _, _]:
+			$clothing/GalCloth3.show()
 			gal_sprite.animation = "D2"
 			gal_text.text = "D2_GAL"
 			return
 		[1, _, "D", _, _]:
+			$clothing/GalCloth4.show()
 			gal_sprite.animation = "D1"
 			gal_text.text = "D1_GAL"
 			return
 		[0, _, "D", _, _]:
+			$clothing/GalCloth5.show()
 			gal_sprite.animation = "D0"
 			gal_text.text = "D0_GAL"
 			return
@@ -214,9 +220,12 @@ func _gal_state():
 		[0, _, "W", _, _]:
 			gal_sprite.animation = "W0"
 			gal_text.text = "W0_GAL"
-			if Rps.cheat_hand >= 8:
+			if Rps.cheat_hand <= 8:
+				Global.gal_win = true
+				if Rps.player_score == 4:
+					Global.gal_flawless = true
+					return
 				return
-			Global.gal_win = true
 			return
 		#strip
 		[5, _, "S", _, _]:

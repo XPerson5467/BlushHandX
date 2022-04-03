@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/GraphicNodes/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/GraphicNodes/dan_s.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/GraphicNodes/RPS_UI.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scripts/Daneesha.gd" type="Script" id=4]
+[ext_resource path="res://assets/images/Clothes/dan_cloth5.png" type="Texture" id=5]
+[ext_resource path="res://assets/images/Clothes/dan_cloth4.png" type="Texture" id=6]
+[ext_resource path="res://assets/images/Clothes/dan_cloth1.png" type="Texture" id=7]
+[ext_resource path="res://assets/images/Clothes/dan_cloth3.png" type="Texture" id=8]
+[ext_resource path="res://assets/images/Clothes/dan_cloth2.png" type="Texture" id=9]
 
 [node name="Daneesha" type="Node2D"]
 script = ExtResource( 4 )
@@ -14,5 +19,34 @@ animation = "dan"
 [node name="dan_s" parent="." instance=ExtResource( 2 )]
 position = Vector2( 642, 417 )
 scale = Vector2( 0.5, 0.5 )
+
+[node name="clothing" type="Node2D" parent="."]
+position = Vector2( 164, 0 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="DanCloth1" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2052.5, 192.5 )
+texture = ExtResource( 7 )
+
+[node name="DanCloth2" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2352.5, 182.5 )
+texture = ExtResource( 9 )
+
+[node name="DanCloth3" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2365, 440 )
+texture = ExtResource( 8 )
+
+[node name="DanCloth4" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2635, 270 )
+texture = ExtResource( 6 )
+
+[node name="DanCloth5" type="Sprite" parent="clothing"]
+visible = false
+position = Vector2( 2097.5, 447.5 )
+texture = ExtResource( 5 )
 
 [node name="RPS_UI" parent="." instance=ExtResource( 3 )]
