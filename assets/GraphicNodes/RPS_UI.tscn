@@ -103,11 +103,6 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 11 ) ],
-"loop": true,
-"name": "paper",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "scissors",
@@ -117,15 +112,15 @@ animations = [ {
 "loop": true,
 "name": "rock",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "paper",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 29 ) ],
-"loop": true,
-"name": "paper",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 10 ), ExtResource( 22 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 21 ) ],
 "loop": true,
 "name": "scissors",
@@ -134,6 +129,11 @@ animations = [ {
 "frames": [ ExtResource( 13 ), ExtResource( 28 ), ExtResource( 27 ), ExtResource( 31 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "rock",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 23 ), ExtResource( 20 ), ExtResource( 25 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "paper",
 "speed": 5.0
 } ]
 

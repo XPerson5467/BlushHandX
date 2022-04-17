@@ -122,7 +122,7 @@ func _macy_state():
 			return
 		[1, 2, "L", "F", _]:
 			macy_sprite.animation = "L1"
-			macy_text.text = "L1-F_MACY"
+			macy_text.text = "L1-2-F_MACY"
 			return
 		[1, 1, "L", "M", _]:
 			macy_sprite.animation = "L1"

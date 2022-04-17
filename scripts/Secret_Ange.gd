@@ -133,3 +133,7 @@ func _on_hide_ui_toggled(button_pressed):
 		return
 	$hide_ui_s.animation = "shown"
 	$dialogue.show()
+
+func _on_back_b_pressed():
+	Global._change_scene("res://scenes/GirlSelect.tscn")
+
